@@ -4,7 +4,7 @@ CREATE TABLE issues (
     number TEXT NOT NULL,
     summary TEXT NOT NULL,
     status TEXT NOT NULL,
-    score INT NOT NULL,
+    is_psa BOOLEAN DEFAULT false NOT NULL,
     days INT NOT NULL,
     description TEXT NOT NULL,
     customer_id UUID NOT NULL

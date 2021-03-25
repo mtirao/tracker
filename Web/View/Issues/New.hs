@@ -23,7 +23,7 @@ renderForm issue = formFor issue [hsx|
     {(textField #number)}
     {(textField #summary)}
     {(textField #status)}
-    {(textField #score)}
+    {(checkboxField #isPsa)}
     {(textField #days)}
     {(textField #description)}
     {(hiddenField #customerId)}
