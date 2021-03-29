@@ -56,4 +56,4 @@ instance Controller IssuesController where
         redirectTo IssuesAction
 
 buildIssue issue = issue
-    |> fill @["number","summary","status","isPsa","days","description","customerId"]
+    |> fill @["number","summary","status","isPsa","days","description","customerId", "startDate", "issueDate"]

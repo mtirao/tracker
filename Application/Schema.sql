@@ -7,7 +7,9 @@ CREATE TABLE issues (
     is_psa BOOLEAN DEFAULT false NOT NULL,
     days INT NOT NULL,
     description TEXT NOT NULL,
-    customer_id UUID NOT NULL
+    customer_id UUID NOT NULL,
+    start_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
+    issue_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL
 );
 CREATE TABLE customers (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,

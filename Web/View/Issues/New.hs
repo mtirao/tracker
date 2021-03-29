@@ -25,6 +25,7 @@ renderForm issue = formFor issue [hsx|
     {(textField #status)}
     {(checkboxField #isPsa)}
     {(textField #days)}
+    {(dateField #startDate)}
     {(textField #description)}
     {(hiddenField #customerId)}
     {submitButton}
