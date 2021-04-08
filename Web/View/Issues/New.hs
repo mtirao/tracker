@@ -6,8 +6,10 @@ data NewView = NewView
     , customer :: Customer
     }
 
+
+
 instance View NewView where
-    html NewView { .. } = [hsx|
+    html NewView { .. } = [hsx| 
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -27,6 +29,7 @@ renderForm issue = formFor issue [hsx|
     {(textField #days)}
     {(dateField #startDate)}
     {(textField #description)}
+    {(checkboxField #isDefect)}
     {(hiddenField #customerId)}
     {submitButton}
 |]

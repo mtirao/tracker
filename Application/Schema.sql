@@ -9,7 +9,8 @@ CREATE TABLE issues (
     description TEXT NOT NULL,
     customer_id UUID NOT NULL,
     start_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
-    issue_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL
+    issue_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
+    is_defect BOOLEAN DEFAULT false NOT NULL
 );
 CREATE TABLE customers (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
@@ -27,5 +28,9 @@ CREATE TABLE test_cases (
     detail TEXT NOT NULL,
     issue TEXT NOT NULL,
     config TEXT NOT NULL
+);
+CREATE TABLE issue_states (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL
 );
 ALTER TABLE issues ADD CONSTRAINT customer_id FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE NO ACTION;

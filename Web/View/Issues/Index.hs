@@ -19,6 +19,10 @@ instance View IndexView where
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>{forEach issues renderIssue}</tbody>
@@ -29,7 +33,8 @@ instance View IndexView where
 
 renderIssue issue = [hsx|
     <tr>
-        <td>{issue}</td>
+        <td>{(get #number issue)}</td> 
+        <td>{((get #summary issue))}</td>
         <td><a href={ShowIssueAction (get #id issue)}>Show</a></td>
         <td><a href={EditIssueAction (get #id issue)} class="text-muted">Edit</a></td>
         <td><a href={DeleteIssueAction (get #id issue)} class="js-delete text-muted">Delete</a></td>

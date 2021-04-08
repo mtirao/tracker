@@ -48,3 +48,13 @@ data TestCasesController
     | UpdateTestCaseAction { testCaseId :: !(Id TestCase) }
     | DeleteTestCaseAction { testCaseId :: !(Id TestCase) }
     deriving (Eq, Show, Data)
+
+data IssueStatesController
+    = IssueStatesAction
+    | NewIssueStateAction
+    | ShowIssueStateAction { issueStateId :: !(Id IssueState) }
+    | CreateIssueStateAction
+    | EditIssueStateAction { issueStateId :: !(Id IssueState) }
+    | UpdateIssueStateAction { issueStateId :: !(Id IssueState) }
+    | DeleteIssueStateAction { issueStateId :: !(Id IssueState) }
+    deriving (Eq, Show, Data)

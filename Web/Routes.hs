@@ -16,3 +16,6 @@ instance AutoRoute UsersController
 
 instance AutoRoute TestCasesController
 
+
+instance AutoRoute IssueStatesController
+
