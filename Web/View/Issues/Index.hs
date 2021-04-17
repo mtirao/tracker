@@ -37,6 +37,7 @@ renderIssue issue = [hsx|
         <td>{((get #summary issue))}</td>
         <td><a href={ShowIssueAction (get #id issue)}>Show</a></td>
         <td><a href={EditIssueAction (get #id issue)} class="text-muted">Edit</a></td>
+        <td><a href={ChangeStatusIssueAction (get #id issue)} class="text-muted">Update</a></td>
         <td><a href={DeleteIssueAction (get #id issue)} class="js-delete text-muted">Delete</a></td>
     </tr>
 |]

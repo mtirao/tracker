@@ -25,6 +25,7 @@ data IssuesController
     | ShowIssueAction { issueId :: !(Id Issue) }
     | CreateIssueAction
     | EditIssueAction { issueId :: !(Id Issue) }
+    | ChangeStatusIssueAction { issueId :: !(Id Issue) }
     | UpdateIssueAction { issueId :: !(Id Issue) }
     | DeleteIssueAction { issueId :: !(Id Issue) }
     deriving (Eq, Show, Data)

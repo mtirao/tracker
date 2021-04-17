@@ -10,7 +10,8 @@ CREATE TABLE issues (
     customer_id UUID NOT NULL,
     start_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
     issue_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NULL,
-    is_defect BOOLEAN DEFAULT false NOT NULL
+    is_defect BOOLEAN DEFAULT false NOT NULL,
+    assignee TEXT DEFAULT '' NOT NULL
 );
 CREATE TABLE customers (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,

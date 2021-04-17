@@ -24,12 +24,10 @@ renderForm :: Issue -> Html
 renderForm issue = formFor issue [hsx|
     {(textField #number)}
     {(textField #summary)}
-    {(textField #status)}
     {(checkboxField #isPsa)}
-    {(textField #days)}
-    {(dateField #startDate)}
-    {(textField #description)}
     {(checkboxField #isDefect)}
+    {(textareaField #description)}
     {(hiddenField #customerId)}
+    {(hiddenField #status)}
     {submitButton}
 |]

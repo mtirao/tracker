@@ -3,6 +3,8 @@ import Web.View.Prelude
 
 data EditView = EditView { user :: User }
 
+
+
 instance View EditView where
     html EditView { .. } = [hsx|
         <nav>
