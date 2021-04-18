@@ -12,26 +12,20 @@ instance View IndexView where
         </nav>
         <h1>Index <a href={pathTo NewCustomerAction} class="btn btn-primary ml-4">+ New</a></h1>
         <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>{forEach customers renderCustomer}</tbody>
-            </table>
+            {forEach customers renderCustomer}
         </div>
     |]
 
 
 renderCustomer customer = [hsx|
-    <tr>
-        <td>{get #name customer}</td>
-        <td><a href={ShowCustomerAction (get #id customer)}>Show</a></td>
-        <td><a href={EditCustomerAction (get #id customer)} class="text-muted">Edit</a></td>
-        <td><a href={DeleteCustomerAction (get #id customer)} class="js-delete text-muted">Delete</a></td>
-    </tr>
+    <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+            <h6 class="my-0">{get #name customer}</h6>
+            <small class="text-muted"><a href={NewIssueAction (get #id customer)}>Add Issue&nbsp;</a></small>
+            <small class="text-muted"><a href={EditCustomerAction (get #id customer)} class="text-muted">Edit&nbsp;</a></small>
+            <small class="text-muted"><a href={DeleteCustomerAction (get #id customer)} class="js-delete text-muted">Delete</a></small>
+            </div>
+        </li>
+    </ul>
 |]
