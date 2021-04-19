@@ -16,6 +16,9 @@ instance Controller CustomersController where
         render NewView { .. }
 
     action ShowCustomerAction { customerId } = do
+        issues <- query @Issue
+            |> filterWhere (#customerId, customerId)
+            |> fetch
         customer <- fetch customerId
         render ShowView { .. }
 

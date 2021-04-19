@@ -23,6 +23,7 @@ renderCustomer customer = [hsx|
             <div>
             <h6 class="my-0">{get #name customer}</h6>
             <small class="text-muted"><a href={NewIssueAction (get #id customer)}>Add Issue&nbsp;</a></small>
+            <small class="text-muted"><a href={ShowCustomerAction (get #id customer)}>Show&nbsp;</a></small>
             <small class="text-muted"><a href={EditCustomerAction (get #id customer)} class="text-muted">Edit&nbsp;</a></small>
             <small class="text-muted"><a href={DeleteCustomerAction (get #id customer)} class="js-delete text-muted">Delete</a></small>
             </div>

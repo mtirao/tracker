@@ -17,6 +17,10 @@ instance Controller UsersController where
 
     action ShowUserAction { userId } = do
         user <- fetch userId
+        issues <- query @Issue
+            |> filterWhere (#assignee, (get #name user))
+            |> fetch
+        user <- fetch userId
         render ShowView { .. }
 
     action EditUserAction { userId } = do
