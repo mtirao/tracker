@@ -13,13 +13,14 @@ instance View DatedView where
             </ol>
         </nav>
         <h1>Plan Issue</h1>  
-        {(get #status issue)}
+        <p>Effort in days: {(get #days issue)}</p>
         {renderForm issue}  
     |]
 
 renderForm :: Issue  -> Html
 renderForm issue = formFor issue [hsx|
     {(dateField #startDate)}
+    {(dateField #issueDate)}
     {(textareaField #description)} 
     {(hiddenField #status)}
     {(hiddenField #customerId)}

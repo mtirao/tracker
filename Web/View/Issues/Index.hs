@@ -18,7 +18,6 @@ instance View IndexView where
 
 
 renderIssue issue = [hsx|
-
     <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>

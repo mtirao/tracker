@@ -20,9 +20,14 @@ instance Controller UsersController where
         issues <- query @Issue
             |> filterWhere (#assignee, (get #name user))
             |> fetch
-        user <- fetch userId
-        render ShowView { .. }
-
+        if null issues 
+            then do
+                setSuccessMessage "No issues found"
+                render ShowView { .. }
+            else do 
+                render ShowView { .. }
+       
+        
     action EditUserAction { userId } = do
         user <- fetch userId
         render EditView { .. }

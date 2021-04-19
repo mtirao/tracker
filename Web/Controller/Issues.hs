@@ -74,7 +74,7 @@ instance Controller IssuesController where
                 Right issue -> do
                     issue <- issue |> createRecord
                     setSuccessMessage "Issue created"
-                    redirectTo IssuesAction
+                    redirectTo CustomersAction
 
     action DeleteIssueAction { issueId } = do
         issue <- fetch issueId

@@ -39,7 +39,7 @@ renderForm issue users states = formFor issue [hsx|
     {(selectField #status states)}
     {(checkboxField #isPsa)}
     {(textField #days)}
-    {(textField #description)} 
+    {(textareaField #description)} 
     {(hiddenField #customerId)}
     {(selectField #assignee users)}
     {submitButton}
