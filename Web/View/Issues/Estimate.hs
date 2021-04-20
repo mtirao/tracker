@@ -13,7 +13,6 @@ instance View EstimateView where
             </ol>
         </nav>
         <h1>Estimate Issue</h1>  
-        {(get #status issue)}
         {renderForm issue}  
     |]
 

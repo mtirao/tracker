@@ -24,6 +24,7 @@ renderIssue issue = [hsx|
         <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
             <h6 class="my-0">{(get #number issue)} &nbsp; {((get #summary issue))}</h6>
+            <h6 class="text-muted">Current state: {(get #status issue)}</h6>
             <small class="text-muted"><a href={ShowIssueAction (get #id issue)}>Show</a>&nbsp;</small>
             <small class="text-muted"><a href={EditIssueAction (get #id issue)} class="text-muted">Edit</a>&nbsp;</small>
             <small class="text-muted"><a href={ChangeStatusIssueAction (get #id issue)} class="text-muted">Update</a>&nbsp;</small>
