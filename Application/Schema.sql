@@ -28,10 +28,19 @@ CREATE TABLE test_cases (
     number TEXT NOT NULL,
     detail TEXT NOT NULL,
     issue TEXT NOT NULL,
-    config TEXT NOT NULL
+    config TEXT NOT NULL,
+    operation TEXT NOT NULL,
+    operation_ext TEXT,
+    tender TEXT NOT NULL,
+    dp TEXT NOT NULL,
+    tender_ext TEXT,
+    dp_ext TEXT NOT NULL,
+    gherking TEXT NOT NULL,
+    customer_id UUID
 );
 CREATE TABLE issue_states (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
     name TEXT NOT NULL
 );
 ALTER TABLE issues ADD CONSTRAINT customer_id FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE NO ACTION;
+ALTER TABLE test_cases ADD CONSTRAINT test_cases_ref_customer_id FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE NO ACTION;

@@ -11,8 +11,14 @@ instance Controller TestCasesController where
         testCases <- query @TestCase |> fetch
         render IndexView { .. }
 
-    action NewTestCaseAction = do
+
+    action NewTestCaseActionWithoutCustomer = do
         let testCase = newRecord
+        render NewView { .. }
+
+    action NewTestCaseAction {customerId} = do
+        let testCase = newRecord
+                    |> set #customerId (Just customerId)
         render NewView { .. }
 
     action ShowTestCaseAction { testCaseId } = do
@@ -52,4 +58,4 @@ instance Controller TestCasesController where
         redirectTo TestCasesAction
 
 buildTestCase testCase = testCase
-    |> fill @["name","number","detail","issue","config"]
+    |> fill @["name","number","detail","issue","config", "operation", "operationExt", "tender", "tenderExt", "dp", "dpExt", "gherking"]

@@ -42,7 +42,8 @@ data UsersController
 
 data TestCasesController
     = TestCasesAction
-    | NewTestCaseAction
+    | NewTestCaseActionWithoutCustomer
+    | NewTestCaseAction { customerId :: !(Id Customer) }
     | ShowTestCaseAction { testCaseId :: !(Id TestCase) }
     | CreateTestCaseAction
     | EditTestCaseAction { testCaseId :: !(Id TestCase) }
@@ -52,7 +53,7 @@ data TestCasesController
 
 data IssueStatesController
     = IssueStatesAction
-    | NewIssueStateAction
+    | NewIssueStateAction 
     | ShowIssueStateAction { issueStateId :: !(Id IssueState) }
     | CreateIssueStateAction
     | EditIssueStateAction { issueStateId :: !(Id IssueState) }

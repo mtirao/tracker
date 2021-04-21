@@ -12,5 +12,14 @@ instance View ShowView where
             </ol>
         </nav>
         <h1>Show TestCase</h1>
-        <p>{testCase}</p>
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                <h6 class="my-0">tc{get #number testCase}-{get #name testCase}</h6>
+                <small class="text-muted">Detail: {get #detail testCase}<br></small>
+                <small class="text-muted">Mantis: {get #issue testCase}<br></small>
+                <small class="text-muted">Confgi: {get #config testCase}<br></small>
+                </div>
+            </li>
+        </ul>
     |]

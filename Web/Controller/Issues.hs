@@ -61,7 +61,7 @@ instance Controller IssuesController where
                 Right issue -> do
                     issue <- issue |> updateRecord
                     setSuccessMessage "Issue updated"
-                    redirectTo EditIssueAction { .. }
+                    redirectTo ShowCustomerAction { customerId = get #customerId issue }
 
     action CreateIssueAction = do
         let issue = newRecord @Issue

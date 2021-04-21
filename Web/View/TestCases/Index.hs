@@ -10,28 +10,23 @@ instance View IndexView where
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
             </ol>
         </nav>
-        <h1>Index <a href={pathTo NewTestCaseAction} class="btn btn-primary ml-4">+ New</a></h1>
+        <h1>Index <a href={pathTo NewTestCaseActionWithoutCustomer} class="btn btn-primary ml-4">+ New</a></h1>
         <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>TestCase</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>{forEach testCases renderTestCase}</tbody>
-            </table>
+            {forEach testCases renderTestCase}
         </div>
     |]
 
 
 renderTestCase testCase = [hsx|
-    <tr>
-        <td>{testCase}</td>
-        <td><a href={ShowTestCaseAction (get #id testCase)}>Show</a></td>
-        <td><a href={EditTestCaseAction (get #id testCase)} class="text-muted">Edit</a></td>
-        <td><a href={DeleteTestCaseAction (get #id testCase)} class="js-delete text-muted">Delete</a></td>
-    </tr>
+    <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+            <h6 class="my-0">tc{get #number testCase}-{get #name testCase}</h6>
+            <small class="text-muted"><a href={ShowTestCaseAction (get #id testCase)}>Show&nbsp;</a></small>
+            <small class="text-muted"><a href={EditTestCaseAction (get #id testCase)} class="text-muted">Edit&nbsp;</a></small>
+            <small class="text-muted"><a href={DeleteTestCaseAction (get #id testCase)} class="js-delete text-muted">Delete</a></small>
+            </div>
+        </li>
+    </ul>
 |]
+
