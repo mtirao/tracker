@@ -5,6 +5,7 @@ import Web.View.Customers.Index
 import Web.View.Customers.New
 import Web.View.Customers.Edit
 import Web.View.Customers.Show
+import Web.View.Customers.ShowTestCase
 
 instance Controller CustomersController where
     action CustomersAction = do
@@ -21,6 +22,13 @@ instance Controller CustomersController where
             |> fetch
         customer <- fetch customerId
         render ShowView { .. }
+
+    action ShowCustomerTestCaseAction { customerId } = do
+        testCases <- query @TestCase
+            |> filterWhere (#customerId, Just customerId)
+            |> fetch
+        customer <- fetch customerId
+        render ShowTestCaseView { .. }
 
     action EditCustomerAction { customerId } = do
         customer <- fetch customerId

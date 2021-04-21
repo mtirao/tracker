@@ -29,5 +29,6 @@ renderForm testCase = formFor testCase [hsx|
     {(textField #dp)}
     {(textField #dpExt)}
     {(textareaField #gherking)}
+    {(hiddenField #customerId)}
     {submitButton}
 |]

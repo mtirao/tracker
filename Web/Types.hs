@@ -12,6 +12,7 @@ data StaticController = WelcomeAction deriving (Eq, Show, Data)
 data CustomersController
     = CustomersAction
     | NewCustomerAction
+    | ShowCustomerTestCaseAction { customerId :: !(Id Customer) }
     | ShowCustomerAction { customerId :: !(Id Customer) }
     | CreateCustomerAction
     | EditCustomerAction { customerId :: !(Id Customer) }

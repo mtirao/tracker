@@ -45,7 +45,8 @@ instance Controller TestCasesController where
         testCase
             |> buildTestCase
             |> ifValid \case
-                Left testCase -> render NewView { .. } 
+                Left testCase -> do
+                    render NewView { .. } 
                 Right testCase -> do
                     testCase <- testCase |> createRecord
                     setSuccessMessage "TestCase created"
@@ -58,4 +59,4 @@ instance Controller TestCasesController where
         redirectTo TestCasesAction
 
 buildTestCase testCase = testCase
-    |> fill @["name","number","detail","issue","config", "operation", "operationExt", "tender", "tenderExt", "dp", "dpExt", "gherking"]
+    |> fill @["name","number","detail","issue","config", "operation", "operationExt", "tender", "tenderExt", "dp", "dpExt", "gherking", "customerId"]
