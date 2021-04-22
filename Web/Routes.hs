@@ -19,3 +19,6 @@ instance AutoRoute TestCasesController
 
 instance AutoRoute IssueStatesController
 
+
+instance AutoRoute TestCaseApiController
+

@@ -61,3 +61,8 @@ data IssueStatesController
     | UpdateIssueStateAction { issueStateId :: !(Id IssueState) }
     | DeleteIssueStateAction { issueStateId :: !(Id IssueState) }
     deriving (Eq, Show, Data)
+
+data TestCaseApiController
+    = TestCaseApiAction
+    | ShowTestCaseApiAction { testCaseId :: !(Id TestCase) }
+    deriving (Eq, Show, Data)

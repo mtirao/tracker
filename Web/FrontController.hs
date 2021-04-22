@@ -5,6 +5,7 @@ import Web.Controller.Prelude
 import Web.View.Layout (defaultLayout)
 
 -- Controller Imports
+import Web.Controller.TestCaseApi
 import Web.Controller.IssueStates
 import Web.Controller.TestCases
 import Web.Controller.Users
@@ -16,6 +17,7 @@ instance FrontController WebApplication where
     controllers = 
         [ startPage WelcomeAction
         -- Generator Marker
+        , parseRoute @TestCaseApiController
         , parseRoute @IssueStatesController
         , parseRoute @TestCasesController
         , parseRoute @UsersController
