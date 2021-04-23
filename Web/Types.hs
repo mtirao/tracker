@@ -63,6 +63,6 @@ data IssueStatesController
     deriving (Eq, Show, Data)
 
 data TestCaseApiController
-    = TestCaseApiAction
+    = TestCaseApiAction { customerId :: !(Id Customer) }
     | ShowTestCaseApiAction { testCaseId :: !(Id TestCase) }
     deriving (Eq, Show, Data)
