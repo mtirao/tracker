@@ -16,7 +16,7 @@ instance View AsignedView where
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active">Estimate Issue: {(get #number issue)} - {(get #summary issue)}</li>
+                <li class="breadcrumb-item active">Assigned Issue:&nbsp;{(get #number issue)} - {(get #summary issue)}</li>
             </ol>
         </nav>
         <h1>Estimate Issue</h1>  
