@@ -24,7 +24,6 @@ renderTestCases testCase = [hsx|
         <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
             <h6 class="my-0">{(get #number testCase)}-{((get #name testCase))}</h6>
-            <small class="text-muted">{(get #detail testCase)}<br></small>
             <small class="text-muted"><a href={ShowTestCaseAction (get #id testCase)}>Show</a>&nbsp;</small>
             <small class="text-muted"><a href={EditTestCaseAction (get #id testCase)} class="text-muted">Edit</a>&nbsp;</small>
             <small class="text-muted"><a href={DeleteTestCaseAction (get #id testCase)} class="js-delete text-muted">Delete</a>&nbsp;</small>

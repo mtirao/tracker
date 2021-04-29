@@ -59,4 +59,4 @@ instance Controller TestCasesController where
         redirectTo TestCasesAction
 
 buildTestCase testCase = testCase
-    |> fill @["name","number","detail","issue","config", "operation", "operationExt", "tender", "tenderExt", "dp", "dpExt", "gherking", "customerId"]
+    |> fill @["name","number","issue","config", "gherking", "customerId"]

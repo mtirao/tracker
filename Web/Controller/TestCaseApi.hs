@@ -22,15 +22,8 @@ instance ToJSON TestCase where
         [ "id" .= get #id testCase
         , "name" .= get #name testCase
         , "number" .= get #number testCase
-        , "detail" .= get #detail testCase
         , "issue" .= get #issue testCase
         , "config" .= get #config testCase
-        , "operation" .= get #operation testCase
-        , "operation_ext" .= get #operationExt testCase
-        , "tender" .= get #tender testCase
-        , "tender_ext" .= get #tenderExt testCase
-        , "dp" .= get #dp testCase
-        , "dp_ext" .= get #dpExt testCase
         , "gherking" .= get #gherking testCase
         , "customer" .= get #customerId testCase
         ]

@@ -26,15 +26,8 @@ CREATE TABLE test_cases (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     number TEXT NOT NULL,
-    detail TEXT NOT NULL,
     issue TEXT NOT NULL,
     config TEXT NOT NULL,
-    operation TEXT NOT NULL,
-    operation_ext TEXT,
-    tender TEXT NOT NULL,
-    dp TEXT NOT NULL,
-    tender_ext TEXT,
-    dp_ext TEXT NOT NULL,
     gherking TEXT NOT NULL,
     customer_id UUID
 );
