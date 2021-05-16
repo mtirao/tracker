@@ -5,6 +5,7 @@ import Web.View.TestCases.Index
 import Web.View.TestCases.New
 import Web.View.TestCases.Edit
 import Web.View.TestCases.Show
+import qualified Data.Text as T
 
 instance Controller TestCasesController where
     action TestCasesAction = do
@@ -23,6 +24,7 @@ instance Controller TestCasesController where
 
     action ShowTestCaseAction { testCaseId } = do
         testCase <- fetch testCaseId
+        let lines = T.splitOn "\n" (get #gherking testCase)
         render ShowView { .. }
 
     action EditTestCaseAction { testCaseId } = do
