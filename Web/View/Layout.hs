@@ -43,6 +43,7 @@ scripts = [hsx|
         <script src="/vendor/bootstrap.min.js"></script>
         <script src="/vendor/flatpickr.js"></script>
         <script src="/helpers.js"></script>
+        <script src="/tracker.js"></script>
         <script src="/vendor/morphdom-umd.min.js"></script>
         <script src="/ihp-auto-refresh.js"></script>
     |]

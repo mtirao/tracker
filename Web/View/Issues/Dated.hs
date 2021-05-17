@@ -1,5 +1,7 @@
 module Web.View.Issues.Dated where
 import Web.View.Prelude
+import qualified Text.Blaze.Html5 as H
+import qualified Text.Blaze.Html5.Attributes as A
 
 data DatedView = DatedView { issue :: Issue}
 
@@ -19,11 +21,12 @@ instance View DatedView where
 
 renderForm :: Issue  -> Html
 renderForm issue = formFor issue [hsx|
-    {(dateField #startDate)}
+    {(dateField #startDate) { fieldInput = (\fieldInput -> H.input ! A.onchange "calculateIssueDate()") } }
     {(dateField #issueDate)}
     {(textareaField #description)} 
     {(hiddenField #status)}
     {(hiddenField #customerId)}
+    {(hiddenField #days)}
     {submitButton}
 |] 
 

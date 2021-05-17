@@ -8,6 +8,8 @@ import Web.View.Issues.Show
 import Web.View.Issues.Estimate
 import Web.View.Issues.Dated
 import Web.View.Issues.Asigned
+import qualified Data.Text as T
+import qualified Data.Time.Format as LT
 
 instance Controller IssuesController where
     action IssuesAction = do
@@ -23,6 +25,14 @@ instance Controller IssuesController where
 
     action ShowIssueAction { issueId } = do
         issue <- fetch issueId
+        customer <- fetch (get #customerId issue)
+
+        let issueDate = case (get #issueDate issue) of
+                         Just a -> LT.formatTime LT.defaultTimeLocale "%0Y-%m-%d" a 
+                         Nothing -> ""
+        let startDate = case (get #startDate issue) of
+                         Just a -> LT.formatTime LT.defaultTimeLocale "%0Y-%m-%d" a 
+                         Nothing -> ""
         render ShowView { .. }
 
     action EditIssueAction { issueId } = do
