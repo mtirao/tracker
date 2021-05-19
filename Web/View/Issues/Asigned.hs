@@ -19,8 +19,7 @@ instance View AsignedView where
                 <li class="breadcrumb-item active">Assigned Issue:{(get #number issue)}&nbsp;- {(get #summary issue)}</li>
             </ol>
         </nav>
-        <h1>Estimate Issue</h1>  
-        {(get #status issue)}
+        <h1>Assign Issue</h1>  
         {renderForm issue users}  
     |]
 
